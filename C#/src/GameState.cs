@@ -1,39 +1,58 @@
+// VBConversions Note: VB project level imports
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using SwinGameSDK;
 
-/*
-    The GameStates represent the state of the Battleships game play.
-    This is used to control the actions and view displayed to
-    the player.
-*/
+/// <summary>
+/// The GameStates represent the state of the Battleships game play.
+/// This is used to control the actions and view displayed to
+/// the player.
+/// </summary>
 
 public enum GameState
 {
-
-	/// The player is viewing the main menu.
-	ViewingMainMenu,
-	
-	/// The player is viewing the game menu
-	ViewingGameMenu,
-	
-	/// The player is looking at the high scores
-	ViewingHighScores,
-	
-	/// The player is altering the game settings
-	AlteringSettings,
-	
-	/// Players are deploying their ships
-	Deploying,
-	
-	/// Players are attempting to locate each others ships
-	Discovering,
-	
-	/// One player has won, showing the victory screen
-	EndingGame,
-	
-	/// The player has quit. Show ending credits and terminate the game
-	Quitting
+    /// <summary>
+    /// The player is viewing the main menu.
+    /// </summary>
+    ViewingMainMenu,
+    
+    /// <summary>
+    /// The player is viewing the game menu
+    /// </summary>
+    ViewingGameMenu,
+    
+    /// <summary>
+    /// The player is looking at the high scores
+    /// </summary>
+    ViewingHighScores,
+    
+    /// <summary>
+    /// The player is altering the game settings
+    /// </summary>
+    AlteringSettings,
+    
+    /// <summary>
+    /// Players are deploying their ships
+    /// </summary>
+    Deploying,
+    
+    /// <summary>
+    /// Players are attempting to locate each others ships
+    /// </summary>
+    Discovering,
+    
+    /// <summary>
+    /// One player has won, showing the victory screen
+    /// </summary>
+    EndingGame,
+    
+    /// <summary>
+    /// The player has quit. Show ending credits and terminate the game
+    /// </summary>
+    Quitting
 }
+
+

@@ -1,22 +1,40 @@
+// VBConversions Note: VB project level imports
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using SwinGameSDK;
 
-/*
-    The result of an attack.
-*/
+/// <summary>
+/// The result of an attack.
+/// </summary>
+
 public enum ResultOfAttack
 {
-    // The player hit something    
+    /// <summary>
+    /// The player hit something
+    /// </summary>
     Hit,
-    // The player missed
+    
+    /// <summary>
+    /// The player missed
+    /// </summary>
     Miss,
-    // The player destroyed a ship
+    
+    /// <summary>
+    /// The player destroyed a ship
+    /// </summary>
     Destroyed,
-    // That location was already shot.
+    
+    /// <summary>
+    /// That location was already shot.
+    /// </summary>
     ShotAlready,
-    // The player killed all of the opponents ships
+    
+    /// <summary>
+    /// The player killed all of the opponents ships
+    /// </summary>
     GameOver
 }
+
