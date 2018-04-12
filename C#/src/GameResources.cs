@@ -209,14 +209,14 @@ public sealed class GameResources
         fullW = System.Convert.ToInt32(260 * number / STEPS);
         SwinGame.DrawBitmap(_LoaderEmpty, BG_X, BG_Y);
         SwinGame.DrawCell(_LoaderFull, 0, BG_X, BG_Y);
-        // SwinGame.DrawBitmapPart(_LoaderFull, 0, 0, fullW, 66, BG_X, BG_Y)
+        
         
         toDraw.X = TX;
         toDraw.Y = TY;
         toDraw.Width = TW;
         toDraw.Height = TH;
         SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, toDraw);
-        // SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH)
+        
         
         SwinGame.RefreshScreen();
         SwinGame.ProcessEvents();
