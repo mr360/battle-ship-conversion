@@ -151,7 +151,7 @@ sealed class DeploymentController
         }
         else
         {
-            SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
+            SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
         }
 
         //DrawShips
