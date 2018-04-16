@@ -161,9 +161,7 @@ static class DeploymentController
         }
         else
         {
-            SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
-            //SwinGame.DrawText("U/D", Color.White, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
-            //SwinGame.DrawText("L/R", Color.Gray, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
+            SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
         }
 
         //DrawShips
