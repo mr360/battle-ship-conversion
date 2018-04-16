@@ -21,9 +21,10 @@ sealed class MenuController
     /// <remarks>
     /// These are the text captions for the menu items.
     /// </remarks>
-    private readonly static string[][] _menuStructure = new string[][] {new string[] {"PLAY", "SETUP", "SCORES", "QUIT"}, 
+    private readonly static string[][] _menuStructure = new string[][] {new string[] {"PLAY", "SETUP", "SCORES", "QUIT","MUTE","UNMUTE"}, 
         new string[] {"RETURN", "SURRENDER", "QUIT"}, 
         new string[] {"EASY", "MEDIUM", "HARD"}};
+    
     
     private const int MENU_TOP = 575;
     private const int MENU_LEFT = 30;
@@ -86,7 +87,7 @@ sealed class MenuController
     {
         HandleMenuInput(GAME_MENU, 0, 0);
     }
-    
+
     /// <summary>
     /// Handles input for the specified menu.
     /// </summary>
@@ -94,22 +95,31 @@ sealed class MenuController
     /// <param name="level">the vertical level of the menu</param>
     /// <param name="xOffset">the xoffset of the menu</param>
     /// <returns>false if a clicked missed the buttons. This can be used to check prior menus.</returns>
-    private static bool HandleMenuInput(int menu, int level, int xOffset)
+    public class Globals
     {
-        if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE))
-        {
-            GameController.EndCurrentState();
-            return true;
-        }
-        
+        public bool MUTES = false;
+    }
+    
+    private static bool HandleMenuInput(int menu, int level, int xOffset)
+    {    
         if (SwinGame.MouseClicked(MouseButton.LeftButton))
         {
+            
             int i = 0;
             for (i = 0; i <= _menuStructure[menu].Length - 1; i++)
             {
                 //IsMouseOver the i'th button of the menu
                 if (IsMouseOverMenu(i, level, xOffset))
                 {
+                    if (i == 5)
+                    {
+                        SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+                    }
+                    if (i == 4) {
+                        SwinGame.StopMusic();
+
+                    }
+
                     PerformMenuAction(menu, i);
                     return true;
                 }
