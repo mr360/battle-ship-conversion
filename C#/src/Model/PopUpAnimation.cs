@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
-public class PopUpAnimation
+public class PopUpAnimation : AIPlayer : ResultOfAttack
 {
 
   public PopupAnimation PopupAnimation { get; set; }
