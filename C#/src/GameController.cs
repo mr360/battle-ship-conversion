@@ -142,6 +142,7 @@ public sealed class GameController
         }
         
         Audio.PlaySoundEffect(GameResources.GameSound("Hit"));
+
         
         UtilityFunctions.DrawAnimationSequence();
     }
@@ -154,7 +155,7 @@ public sealed class GameController
         }
         
         Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
-        
+        SwinGame.DrawBitmap(GameResources.GameImage("ThumpUp"));       
         UtilityFunctions.DrawAnimationSequence();
     }
     
