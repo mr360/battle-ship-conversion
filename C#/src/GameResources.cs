@@ -42,7 +42,10 @@ public sealed class GameResources
         //Explosions
         NewImage("Explosion", "explosion.png");
         NewImage("Splash", "splash.png");
-        
+
+        // Thump UP
+        NewImage("ThumpUp", "thumpUp.jpg");
+
     }
     
     private static void LoadSounds()

@@ -155,7 +155,7 @@ public sealed class GameController
         }
         
         Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
-        SwinGame.DrawBitmap(GameResources.GameImage("ThumpUp"));       
+        SwinGame.DrawBitmap(GameResources.GameImage("ThumpUp"),row,column);       
         UtilityFunctions.DrawAnimationSequence();
     }
     

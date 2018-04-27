@@ -33,7 +33,7 @@ sealed class UtilityFunctions
     
     private readonly static Color LARGE_SEA = SwinGame.RGBAColor((byte) 6, (byte) 60, (byte) 94, (byte) 255);
     private readonly static Color LARGE_SHIP = Color.Gray;
-    private readonly static Color LARGE_MISS = SwinGame.RGBAColor((byte) 1, (byte) 147, (byte) 220, (byte) 255);
+    private readonly static Color LARGE_MISS = SwinGame.RGBAColor((byte) 255, (byte) 0, (byte) 255, (byte) 255);
     private readonly static Color LARGE_HIT = SwinGame.RGBAColor((byte) 252, (byte) 2, (byte) 3, (byte) 255);
     
     private readonly static Color OUTLINE_COLOR = SwinGame.RGBAColor((byte) 5, (byte) 55, (byte) 88, (byte) 255);
