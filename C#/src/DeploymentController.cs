@@ -36,6 +36,8 @@ sealed class DeploymentController
 
     private static Direction _currentDirection = Direction.UpDown;
     private static ShipName _selectedShip = ShipName.Tug;
+    private static Ship _ship = new Ship(_selectedShip);
+
 
     /// <summary>
     /// Handles user input for the Deployment phase of the game.
