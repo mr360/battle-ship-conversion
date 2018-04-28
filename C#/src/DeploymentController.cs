@@ -92,13 +92,12 @@ static class DeploymentController
             {
                 DoDeployClick();
             }
-<<<<<<< HEAD
+
 
             if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
-=======
+
           
-            if (GameController.HumanPlayer.ReadyToDeploy && UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
->>>>>>> ship-orientation
+           
             {
                 GameController.EndDeployment();
             }
