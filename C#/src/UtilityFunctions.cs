@@ -286,7 +286,7 @@ sealed class UtilityFunctions
     
     public static void AddExplosion(int row, int col)
     {
-        AddAnimation(row, col, "Splash");
+        AddAnimation1(row, col, "HitExplosion");
     }
     
     public static void AddSplash(int row, int col)
@@ -312,6 +312,25 @@ sealed class UtilityFunctions
         s.Y = FIELD_TOP + row * (CELL_HEIGHT + CELL_GAP);
         
         s.StartAnimation("splash");
+        _Animations.Add(s);
+    }
+    
+     private static void AddAnimation1(int row, int col, string image)
+    {
+        Sprite s = default(Sprite);
+        Bitmap imgObj = default(Bitmap);
+        
+        imgObj = GameResources.GameImage(image);
+        imgObj.SetCellDetails(40, 40, 3, 3, 35);
+        
+        AnimationScript animation = default(AnimationScript);
+        animation = SwinGame.LoadAnimationScript("HitExplosion.txt");
+        
+        s = SwinGame.CreateSprite(imgObj, animation);
+        s.X = FIELD_LEFT + col * (CELL_WIDTH + CELL_GAP);
+        s.Y = FIELD_TOP + row * (CELL_HEIGHT + CELL_GAP);
+        
+        s.StartAnimation("HitExplosion");
         _Animations.Add(s);
     }
     
