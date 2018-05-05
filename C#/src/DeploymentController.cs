@@ -44,8 +44,7 @@ static class DeploymentController
     /// The selected ship to be placed; defaulted to Tug ship.
     /// </summary>
     private static ShipName _selectedShip = ShipName.Tug;
-    private static int _row1= GameController.HumanPlayer.Ship(_selectedShip).Row;
-    private static int _col1= GameController.HumanPlayer.Ship(_selectedShip).Column;
+
     /// <summary>
     /// Handles user input for the Deployment phase of the game.
     /// </summary>
@@ -78,15 +77,10 @@ static class DeploymentController
         if (SwinGame.MouseClicked(MouseButton.LeftButton))
         {
             ShipName selected = default(ShipName);
-            
             selected = GetShipMouseIsOver();
-           
             if (selected != ShipName.None)
             {
                 _selectedShip = selected;
-               
-                _row1 = GameController.HumanPlayer.Ship(_selectedShip).Row;
-                _col1 = GameController.HumanPlayer.Ship(_selectedShip).Column;
             }
             else
             {
@@ -96,20 +90,16 @@ static class DeploymentController
 
             if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
 
-          
-           
             {
                 GameController.EndDeployment();
             }
             else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
             {
                 _currentDirection = Direction.UpDown;
-                GameController.HumanPlayer.PlayerGrid.MoveShip(_row1, _col1, _selectedShip, _currentDirection);
             }
             else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
             {
                 _currentDirection = Direction.LeftRight;
-                GameController.HumanPlayer.PlayerGrid.MoveShip(_row1, _col1, _selectedShip, _currentDirection);
             }
             else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
             {
@@ -174,6 +164,8 @@ static class DeploymentController
         else
         {
             SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
+            //SwinGame.DrawText("U/D", Color.White, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
+            //SwinGame.DrawText("L/R", Color.Gray, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
         }
 
         //DrawShips
@@ -228,4 +220,8 @@ static class DeploymentController
 
         return ShipName.None;
     }
+
 }
+
+
+
